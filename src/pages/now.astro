@@ -1,4 +1,5 @@
 ---
+const pageTitle = "Now";
 ---
 
 <html lang="en">
@@ -7,7 +8,7 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Orgs that work!</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
         <a href="/">Home</a>
@@ -16,7 +17,7 @@
         <a href="/now/">Now</a>
         <a href="/contact/">Contact</a>
 
-		<h1>Now</h1>
+		<h1>{pageTitle}</h1>
         <p>
            <a href="https://nownownow.com/about">/now</a> inspired by Derek Sivers.
         </p>
