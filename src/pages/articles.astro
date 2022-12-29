@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Header from '../components/Header.astro';
 const pageTitle = "Articles";
 ---
 
@@ -12,11 +13,7 @@ const pageTitle = "Articles";
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<a href="/">Home</a>
-		<a href="/articles/">Articles</a>
-		<a href="/about/">About</a>
-		<a href="/now/">Now</a>
-		<a href="/contact/">Contact</a>
+		<Header />
 
 		<h1>{pageTitle}</h1>
 
