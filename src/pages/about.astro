@@ -1,104 +1,81 @@
 ---
-import "../styles/global.css";
-import Header from '../components/Header.astro';
-import Footer from "../components/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "About Me";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-		<Header />
+<BaseLayout pageTitle={pageTitle}>
+	<p>
+		Hello, I'm Quentin, a being passionated by Live Action Role Playing
+		games, Burning Man-like events, performing arts, and sciences.
+	</p>
+	<p>
+		My goal here is to make organizations able to create the best working
+		environments and get the best of the people to be able to build the
+		right solutions with high quality.
+	</p>
 
-		<h1>{pageTitle}</h1>
+	<p>
+		As each context is different, there is no one-solution-fits-all. The
+		approach is the solution:
+		<ul>
+			<li>
+				<b>Agnostic &#X2500;</b> An approach driven by the mindsets goes
+				beyond the one driven by the tools
+			</li>
+			<li>
+				<b>Tailored-made &#X2500;</b> The people and the organization make
+				their own solutions
+			</li>
+			<li>
+				<b>Hands-on &#X2500;</b> Creating is a process of trial and failure,
+				only allowed by doing
+			</li>
+		</ul>
+	</p>
 
-		<p>
-			Hello, I'm Quentin, a being passionated by Live Action Role Playing
-			games, Burning Man-like events, performing arts, and sciences.
-		</p>
-		<p>
-			My goal here is to make organizations able to create the best
-			working environments and get the best of the people to be able to
-			build the right solutions with high quality.
-		</p>
+	<p>
+		My values are central in my approach:
+		<ul>
+			<li>
+				<b>Human &#X2500;</b> Individuals and their interactions make organizations
+			</li>
+			<li>
+				<b>Trust &#X2500;</b> Collaboration creates great things when based
+				on trust
+			</li>
+			<li>
+				<b>Simplicity &#X2500;</b> Everyone in the organization should be
+				able to understand how it works
+			</li>
+		</ul>
+	</p>
 
-		<p>
-			As each context is different, there is no one-solution-fits-all. The
-			approach is the solution:
-			<ul>
-				<li>
-					<b>Agnostic &#X2500;</b> An approach driven by the mindsets goes
-					beyond the one driven by the tools
-				</li>
-				<li>
-					<b>Tailored-made &#X2500;</b> The people and the organization
-					make their own solutions
-				</li>
-				<li>
-					<b>Hands-on &#X2500;</b> Creating is a process of trial and failure,
-					only allowed by doing
-				</li>
-			</ul>
-		</p>
+	<p>
+		With my approach, I help organizations of any size and any kind, teams,
+		and individuals. The will to change is more important than anything
+		else! To this end, my offer includes:
+		<ul>
+			<li>Coaching</li>
+			<li>Practical and theoretical trainings</li>
+			<li>Workshops</li>
+			<li>Facilitation</li>
+		</ul>
+	</p>
 
-		<p>
-			My values are central in my approach:
-			<ul>
-				<li>
-					<b>Human &#X2500;</b> Individuals and their interactions make
-					organizations
-				</li>
-				<li>
-					<b>Trust &#X2500;</b> Collaboration creates great things when
-					based on trust
-				</li>
-				<li>
-					<b>Simplicity &#X2500;</b> Everyone in the organization should
-					be able to understand how it works
-				</li>
-			</ul>
-		</p>
+	<p>
+		I mainly focus on Agile, Lean, Design Thinking, and self-organization
+		which include different tools and frameworks: eXtreme Programming,
+		Scrum, Kanban, Holacracy, Objectives & Key Results, User Story Mapping,
+		... All together they are the toolbox I take with me for every mission.
+	</p>
 
-		<p>
-			With my approach, I help organizations of any size and any kind,
-			teams, and individuals. The will to change is more important than
-			anything else! To this end, my offer includes:
-			<ul>
-				<li>Coaching</li>
-				<li>Practical and theoretical trainings</li>
-				<li>Workshops</li>
-				<li>Facilitation</li>
-			</ul>
-		</p>
+	<p>
+		Everything starts with a discussion to understand your context and your
+		need. Then we’ll define a shared goal, the way to reach it and the
+		length of the mission.
+	</p>
 
-		<p>
-			I mainly focus on Agile, Lean, Design Thinking, and
-			self-organization which include different tools and frameworks:
-			eXtreme Programming, Scrum, Kanban, Holacracy, Objectives & Key
-			Results, User Story Mapping, ... All together they are the toolbox I
-			take with me for every mission.
-		</p>
-
-		<p>
-			Everything starts with a discussion to understand your context and
-			your need. Then we’ll define a shared goal, the way to reach it and
-			the length of the mission.
-		</p>
-
-		<p>
-			<a href="/contact">Get started</a>
-		</p>
-
-        <Footer />
-
-		<script>
-			import "../scripts/menu.ts";
-		</script>
-	</body>
-</html>
+	<p>
+		<a href="/contact">Get started</a>
+	</p>
+</BaseLayout>
