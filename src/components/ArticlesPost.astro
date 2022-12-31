@@ -2,11 +2,39 @@
 const { title, url, image, description } = Astro.props;
 ---
 
-<div>
-	<a href={url}><img src={image.url} width="300" alt={image.alt} /></a>
-	<div>
+<div class="flex-container">
+	<div class="item">
+		<a href={url}><img src={image.url} width="300" alt={image.alt} /></a>
+	</div>
+	<div class="item">
 		<a href={url}>{title}</a>
 		<br />
 		{description}
 	</div>
 </div>
+
+<style>
+	.flex-container {
+		display: flex;
+		flex-direction: column;
+		padding: 1rem 0;
+	}
+
+	a {
+		text-decoration: none;
+		font-size: 1.2rem;
+		color: darkgray;
+	}
+
+	@media screen and (min-width: 636px) {
+		.flex-container {
+			display: flex;
+			flex-direction: row;
+			padding-top: 1rem;
+		}
+
+		.item {
+			padding-right: 1rem;
+		}
+	}
+</style>
