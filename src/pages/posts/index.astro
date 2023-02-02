@@ -1,0 +1,35 @@
+---
+import type { MarkdownInstance } from 'astro'
+import BaseLayout from "@layouts/BaseLayout.astro";
+import ArticlesPost from "@components/ArticlesPost.astro";
+
+import type { PostFrontmatter } from "@types";
+
+let allPosts = await Astro.glob<PostFrontmatter>("./*.md");
+
+type Post = MarkdownInstance<PostFrontmatter>;
+
+allPosts = allPosts.sort((a: Post, b: Post): number => {
+    if (a.frontmatter.pubDate > b.frontmatter.pubDate) return -1;
+    if (a.frontmatter.pubDate < b.frontmatter.pubDate) return 1;
+    return 0;
+})
+
+const pageTitle = "Articles";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+	<div class="grid grid-cols-3 gap-4">
+		{
+			allPosts.map((post) => (
+				<ArticlesPost
+					url={post.url}
+					title={post.frontmatter.title}
+                    pubDate={post.frontmatter.pubDate}
+					image={post.frontmatter.image}
+					description={post.frontmatter.description}
+				/>
+			))
+		}
+	</div>
+</BaseLayout>

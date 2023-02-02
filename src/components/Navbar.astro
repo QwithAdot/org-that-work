@@ -1,0 +1,49 @@
+---
+// Home, Articles, Tags, About, Now, LinkedIn, RSS, Contact
+const blogItems = [
+	{
+		title: "Home",
+		path: "/",
+	},
+	{
+		title: "Articles",
+		path: "/posts/",
+	},
+];
+
+const meItems = [
+	{
+		title: "About",
+		path: "/about/",
+	},
+	{
+		title: "LinkedIn",
+		path: "#",
+	},
+	{
+		title: "Contact",
+		path: "/contact/",
+	},
+];
+---
+
+<div class="flex bg-primary-500 text-white">
+	<div class="flex">
+		{
+			blogItems.map((item) => (
+				<a class="p-4 hover:bg-primary-600" href={item.path}>
+					{item.title}
+				</a>
+			))
+		}
+	</div>
+	<div class="flex ml-auto">
+		{
+			meItems.map((item) => (
+				<a class="p-4 hover:bg-primary-600" href={item.path}>
+					{item.title}
+				</a>
+			))
+		}
+	</div>
+</div>

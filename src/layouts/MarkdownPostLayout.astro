@@ -1,16 +1,26 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-const { frontmatter } = Astro.props;
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { formatDate } from "@utils";
+
+import type { MarkdownLayoutProps } from "astro";
+import type { PostFrontmatter } from "../types";
+
+type Props = MarkdownLayoutProps<PostFrontmatter>;
+
+const { title, pubDate, image, tags } = Astro.props.frontmatter;
 ---
 
-<BaseLayout pageTitle={frontmatter.title}>
-	<p>Published on {frontmatter.pubDate.slice(0, 10)}</p>
-	<img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
-	<slot />
+<BaseLayout pageTitle={title}>
+	<p>Published on {formatDate(pubDate)}</p>
+	<img src={image.url} width="300" alt={image.alt} />
+
+	<div class="prose max-w-none">
+		<slot />
+	</div>
 
 	<div class="tags">
 		{
-			frontmatter.tags.map((tag: string) => (
+			tags.map((tag: string) => (
 				<p class="tag">
 					<a href={`/tags/${tag}`}>{tag}</a>
 				</p>

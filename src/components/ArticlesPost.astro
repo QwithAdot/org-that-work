@@ -1,14 +1,12 @@
 ---
-const { title, url, image, description } = Astro.props;
+import { formatDate } from "@utils"
+
+const { title, url, image, description, pubDate } = Astro.props;
 ---
 
-<div class="flex-container">
-	<div class="item">
+	<div>
 		<a href={url}><img src={image.url} width="300" alt={image.alt} /></a>
-	</div>
-	<div class="item">
 		<a href={url}>{title}</a>
-		<br />
+        <p>{formatDate(pubDate)}</p>
 		{description}
 	</div>
-</div>
